@@ -34,3 +34,4 @@ All lectures are in English.
   - `useClick()`: Execute a function when an element clicked
   - `useConfirm()`: Ask user before do certain action
   - `usePreventLeave()`: Ask user if s/he really want to exit the window
+  - `useBeforeLeave()`: Execute a function when user leaves the tab

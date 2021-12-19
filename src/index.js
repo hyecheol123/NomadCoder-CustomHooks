@@ -12,6 +12,7 @@ import useTitle from './useTitle';
 import useClick from './useClick';
 import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
+import useBeforeLeave from './useBeforeLeave';
 
 // Response from API
 const content = [
@@ -42,6 +43,9 @@ const App = () => {
   );
   // Event Listeners to prevent/allow users to close the window
   const { enablePrevent, disablePrevent } = usePreventLeave();
+  // Function to run when user leave the tab
+  const noLeave = () => console.log("Please Don't Leave");
+  useBeforeLeave(noLeave);
 
   return (
     <div>
