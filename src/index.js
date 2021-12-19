@@ -7,6 +7,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import useInput from './useInput';
+import useTabs from './useTabs';
+
+// Response from API
+const content = [
+  { tab: 'Section 1', content: 'I am the content of the Section 1' },
+  { tab: 'Section 2', content: 'I am the content of the Section 2' },
+];
 
 /**
  * A React functional component representing the app
@@ -16,12 +23,25 @@ import useInput from './useInput';
 const App = () => {
   // Name input (Max Length = 10)
   const name = useInput('Mr.', (value) => value.length <= 10);
+  // Tab selector
+  const { currentItem, changeItem } = useTabs(0, content);
 
   return (
     <div>
       <h1>Hello</h1>
-      {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
-      <input placeholder="Name" {...name} />
+      <div id="useInput">
+        {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
+        <input placeholder="Name" {...name} />
+      </div>
+      <br />
+      <div id="useTab">
+        {content.map((section, index) => (
+          <button onClick={() => changeItem(index)} key={index}>
+            {section.tab}
+          </button>
+        ))}
+        <div>{currentItem.content}</div>
+      </div>
     </div>
   );
 };

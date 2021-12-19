@@ -26,3 +26,5 @@ All lectures are in English.
   - `useInput()`: Handle user's input on HTML input box
     - Automatically update the input when user changes the text in the input box.
     - If validator function passed to the Hook, it will check the value before update the value.
+  - `useTabs()`: Showing the content of currently selected tab
+    - Pretend that the information has already been retrieved from the API.
