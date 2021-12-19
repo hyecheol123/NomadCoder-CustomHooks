@@ -36,3 +36,4 @@ All lectures are in English.
   - `usePreventLeave()`: Ask user if s/he really want to exit the window
   - `useBeforeLeave()`: Execute a function when user leaves the tab
   - `useFadeIn()`: Make elements fade in.
+  - `useNetwork()`: Detect network status and execute a function when network status changes

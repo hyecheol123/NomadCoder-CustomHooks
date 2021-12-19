@@ -14,6 +14,7 @@ import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
+import useNetwork from './useNetwork';
 
 // Response from API
 const content = [
@@ -50,10 +51,14 @@ const App = () => {
   // Fade in elements
   const fadeInDiv1 = useFadeIn(2, 0);
   const fadeInDiv2 = useFadeIn(5, 5);
+  // Network status
+  const online = useNetwork((isOnline) => {
+    console.log(isOnline ? 'We just went online' : 'We are just disconnected');
+  });
 
   return (
     <div>
-      <h1 ref={titleRef}>Hello</h1>
+      <h1 ref={titleRef}>Hello. You are {online ? 'Online' : 'Offline'}</h1>
       <div id="useInput" {...fadeInDiv1}>
         {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
         <input placeholder="Name" {...name} />
