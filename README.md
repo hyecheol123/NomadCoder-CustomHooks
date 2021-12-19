@@ -19,6 +19,7 @@ All lectures are in English.
 ## What I Learn
 
 - Custom hooks are basically same as helper methods to conduct repeating tasks more conveniently.
+- [Window:beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event) fired when the window are **about to be unloaded**.
 
 ## Project
 
@@ -32,3 +33,4 @@ All lectures are in English.
     - Works when component mounts and updates
   - `useClick()`: Execute a function when an element clicked
   - `useConfirm()`: Ask user before do certain action
+  - `usePreventLeave()`: Ask user if s/he really want to exit the window

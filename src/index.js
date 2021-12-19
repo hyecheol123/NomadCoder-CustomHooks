@@ -11,6 +11,7 @@ import useTabs from './useTabs';
 import useTitle from './useTitle';
 import useClick from './useClick';
 import useConfirm from './useConfirm';
+import usePreventLeave from './usePreventLeave';
 
 // Response from API
 const content = [
@@ -39,6 +40,8 @@ const App = () => {
     () => console.log('Delete Everything'),
     () => console.log('Delete Canceled')
   );
+  // Event Listeners to prevent/allow users to close the window
+  const { enablePrevent, disablePrevent } = usePreventLeave();
 
   return (
     <div>
@@ -59,6 +62,11 @@ const App = () => {
       <br />
       <div>
         <button onClick={confirmDelete}>Delete Everything</button>
+      </div>
+      <br />
+      <div>
+        <button onClick={enablePrevent}>Prevent Close</button>
+        <button onClick={disablePrevent}>Allow Close</button>
       </div>
     </div>
   );
