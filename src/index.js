@@ -9,6 +9,7 @@ import ReactDom from 'react-dom';
 import useInput from './useInput';
 import useTabs from './useTabs';
 import useTitle from './useTitle';
+import useClick from './useClick';
 
 // Response from API
 const content = [
@@ -29,10 +30,12 @@ const App = () => {
   // Function to update the document's title
   const titleUpdater = useTitle('Loading');
   setTimeout(() => titleUpdater('Home'), 5000); // Change title after 5 second
+  // Add a click event on title
+  const titleRef = useClick(() => console.log('Hello'));
 
   return (
     <div>
-      <h1>Hello</h1>
+      <h1 ref={titleRef}>Hello</h1>
       <div id="useInput">
         {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
         <input placeholder="Name" {...name} />

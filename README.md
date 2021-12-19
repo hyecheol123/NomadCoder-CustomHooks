@@ -30,3 +30,4 @@ All lectures are in English.
     - Pretend that the information has already been retrieved from the API.
   - `useTitle()`: Update title of the page
     - Works when component mounts and updates
+  - `useClick()`: Execute a function when an element clicked
