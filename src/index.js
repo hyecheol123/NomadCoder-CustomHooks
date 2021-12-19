@@ -8,6 +8,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import useInput from './useInput';
 import useTabs from './useTabs';
+import useTitle from './useTitle';
 
 // Response from API
 const content = [
@@ -25,6 +26,9 @@ const App = () => {
   const name = useInput('Mr.', (value) => value.length <= 10);
   // Tab selector
   const { currentItem, changeItem } = useTabs(0, content);
+  // Function to update the document's title
+  const titleUpdater = useTitle('Loading');
+  setTimeout(() => titleUpdater('Home'), 5000); // Change title after 5 second
 
   return (
     <div>

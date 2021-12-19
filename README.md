@@ -28,3 +28,5 @@ All lectures are in English.
     - If validator function passed to the Hook, it will check the value before update the value.
   - `useTabs()`: Showing the content of currently selected tab
     - Pretend that the information has already been retrieved from the API.
+  - `useTitle()`: Update title of the page
+    - Works when component mounts and updates
