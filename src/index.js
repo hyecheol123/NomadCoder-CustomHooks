@@ -4,7 +4,7 @@
  * @author Hyecheol (Jerry) Jang <hyecheol123@gmail.com>
  */
 
-import React from 'react';
+import * as React from 'react';
 import ReactDom from 'react-dom';
 import useInput from './useInput';
 import useTabs from './useTabs';
@@ -13,6 +13,7 @@ import useClick from './useClick';
 import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
+import useFadeIn from './useFadeIn';
 
 // Response from API
 const content = [
@@ -46,16 +47,19 @@ const App = () => {
   // Function to run when user leave the tab
   const noLeave = () => console.log("Please Don't Leave");
   useBeforeLeave(noLeave);
+  // Fade in elements
+  const fadeInDiv1 = useFadeIn(2, 0);
+  const fadeInDiv2 = useFadeIn(5, 5);
 
   return (
     <div>
       <h1 ref={titleRef}>Hello</h1>
-      <div id="useInput">
+      <div id="useInput" {...fadeInDiv1}>
         {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
         <input placeholder="Name" {...name} />
       </div>
       <br />
-      <div id="useTab">
+      <div id="useTab" {...fadeInDiv2}>
         {content.map((section, index) => (
           <button onClick={() => changeItem(index)} key={index}>
             {section.tab}
