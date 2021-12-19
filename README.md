@@ -18,4 +18,11 @@ All lectures are in English.
 
 ## What I Learn
 
+- Custom hooks are basically same as helper methods to conduct repeating tasks more conveniently.
+
 ## Project
+
+- Several Custom Hooks are implemented
+  - `useInput()`: Handle user's input on HTML input box
+    - Automatically update the input when user changes the text in the input box.
+    - If validator function passed to the Hook, it will check the value before update the value.
