@@ -31,3 +31,4 @@ All lectures are in English.
   - `useTitle()`: Update title of the page
     - Works when component mounts and updates
   - `useClick()`: Execute a function when an element clicked
+  - `useConfirm()`: Ask user before do certain action

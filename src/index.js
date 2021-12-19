@@ -10,6 +10,7 @@ import useInput from './useInput';
 import useTabs from './useTabs';
 import useTitle from './useTitle';
 import useClick from './useClick';
+import useConfirm from './useConfirm';
 
 // Response from API
 const content = [
@@ -32,6 +33,12 @@ const App = () => {
   setTimeout(() => titleUpdater('Home'), 5000); // Change title after 5 second
   // Add a click event on title
   const titleRef = useClick(() => console.log('Hello'));
+  // Delete function with user's confirmation
+  const confirmDelete = useConfirm(
+    'Are you sure?',
+    () => console.log('Delete Everything'),
+    () => console.log('Delete Canceled')
+  );
 
   return (
     <div>
@@ -48,6 +55,10 @@ const App = () => {
           </button>
         ))}
         <div>{currentItem.content}</div>
+      </div>
+      <br />
+      <div>
+        <button onClick={confirmDelete}>Delete Everything</button>
       </div>
     </div>
   );
