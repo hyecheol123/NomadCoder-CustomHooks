@@ -16,6 +16,7 @@ import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
 import useScroll from './useScroll';
+import useFullscreen from './useFullscreen';
 
 // Response from API
 const content = [
@@ -58,6 +59,10 @@ const App = () => {
   });
   // Scroll Y location
   const { y } = useScroll();
+  // Full screen target image and trigger function
+  const fullScreenHook = useFullscreen((isFullscreen) => {
+    console.log(isFullscreen ? 'Full-screen' : 'small screen');
+  });
 
   return (
     <div style={{ height: '1000vh' }}>
@@ -83,6 +88,22 @@ const App = () => {
       <div>
         <button onClick={enablePrevent}>Prevent Close</button>
         <button onClick={disablePrevent}>Allow Close</button>
+      </div>
+      <br />
+      <div>
+        <div ref={fullScreenHook.element}>
+          <img
+            src="https://i.ibb.co/R6RwNxx/grape.jpg"
+            alt="grape"
+            width="250"
+          />
+          <button onClick={fullScreenHook.exitFullscreen}>
+            Exit Full Screen
+          </button>
+        </div>
+        <button onClick={fullScreenHook.triggerFullscreen}>
+          Make Image Full Screen
+        </button>
       </div>
       <h2 style={{ position: 'fixed', color: y > 100 ? 'red' : 'blue' }}>
         Scroll

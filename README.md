@@ -20,6 +20,10 @@ All lectures are in English.
 
 - Custom hooks are basically same as helper methods to conduct repeating tasks more conveniently.
 - [Window:beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event) fired when the window are **about to be unloaded**.
+- [Element.requestFullscreen()](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen) is a method to make the element to be displayed in full-screen mode.
+- [Document.exitFullscreen()](https://developer.mozilla.org/en-US/docs/Web/API/Document/exitFullscreen) is a method to taken the element out of full-screen mode.
+  - [Document.fullscreenElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenElement) is a read-only property returns the Element that is currently being presented in full-screen mode in the document.
+    If the full-screen mode is not currently in use, `null` is returned.
 
 ## Project
 
@@ -38,3 +42,4 @@ All lectures are in English.
   - `useFadeIn()`: Make elements fade in.
   - `useNetwork()`: Detect network status and execute a function when network status changes
   - `useScroll()`: Detect scroll
+  - `useFullscreen()`: Make an element to be displayed in full-screen mode.
