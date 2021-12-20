@@ -15,6 +15,7 @@ import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
+import useScroll from './useScroll';
 
 // Response from API
 const content = [
@@ -55,9 +56,11 @@ const App = () => {
   const online = useNetwork((isOnline) => {
     console.log(isOnline ? 'We just went online' : 'We are just disconnected');
   });
+  // Scroll Y location
+  const { y } = useScroll();
 
   return (
-    <div>
+    <div style={{ height: '1000vh' }}>
       <h1 ref={titleRef}>Hello. You are {online ? 'Online' : 'Offline'}</h1>
       <div id="useInput" {...fadeInDiv1}>
         {/* <input placeholder="Name" value={name.value} onChange={name.onChange} /> */}
@@ -81,6 +84,9 @@ const App = () => {
         <button onClick={enablePrevent}>Prevent Close</button>
         <button onClick={disablePrevent}>Allow Close</button>
       </div>
+      <h2 style={{ position: 'fixed', color: y > 100 ? 'red' : 'blue' }}>
+        Scroll
+      </h2>
     </div>
   );
 };
