@@ -24,6 +24,10 @@ All lectures are in English.
 - [Document.exitFullscreen()](https://developer.mozilla.org/en-US/docs/Web/API/Document/exitFullscreen) is a method to taken the element out of full-screen mode.
   - [Document.fullscreenElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenElement) is a read-only property returns the Element that is currently being presented in full-screen mode in the document.
     If the full-screen mode is not currently in use, `null` is returned.
+- React Custom Hooks vs Normal Functions
+  - Hooks should be called from the React code.
+  - Hooks cannot be called from React Class Components
+  - In the regular JavaScript functions, we cannot access to `useState`, `useEffect`, `useContext`, etc.
 
 ## Project
 
