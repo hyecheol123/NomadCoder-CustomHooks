@@ -17,6 +17,7 @@ import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
 import useScroll from './useScroll';
 import useFullscreen from './useFullscreen';
+import useNotification from './useNotification';
 
 // Response from API
 const content = [
@@ -63,6 +64,10 @@ const App = () => {
   const fullScreenHook = useFullscreen((isFullscreen) => {
     console.log(isFullscreen ? 'Full-screen' : 'small screen');
   });
+  // Trigger notification
+  const triggerNotification = useNotification('Notification Test', {
+    body: 'test',
+  });
 
   return (
     <div style={{ height: '1000vh' }}>
@@ -104,6 +109,10 @@ const App = () => {
         <button onClick={fullScreenHook.triggerFullscreen}>
           Make Image Full Screen
         </button>
+      </div>
+      <br />
+      <div>
+        <button onClick={triggerNotification}>Send Notification</button>
       </div>
       <h2 style={{ position: 'fixed', color: y > 100 ? 'red' : 'blue' }}>
         Scroll

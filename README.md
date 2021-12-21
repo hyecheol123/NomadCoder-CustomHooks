@@ -24,6 +24,7 @@ All lectures are in English.
 - [Document.exitFullscreen()](https://developer.mozilla.org/en-US/docs/Web/API/Document/exitFullscreen) is a method to taken the element out of full-screen mode.
   - [Document.fullscreenElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenElement) is a read-only property returns the Element that is currently being presented in full-screen mode in the document.
     If the full-screen mode is not currently in use, `null` is returned.
+- [Notification API](https://developer.mozilla.org/ko/docs/Web/API/notification) is used to send notification from the browser.
 - React Custom Hooks vs Normal Functions
   - Hooks should be called from the React code.
   - Hooks cannot be called from React Class Components
@@ -47,3 +48,4 @@ All lectures are in English.
   - `useNetwork()`: Detect network status and execute a function when network status changes
   - `useScroll()`: Detect scroll
   - `useFullscreen()`: Make an element to be displayed in full-screen mode.
+  - `useNotification()`: Send notification from browser
